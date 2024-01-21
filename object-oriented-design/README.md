@@ -25,3 +25,14 @@ For example:
 "As an online shopper, I want to add an item to my cart so that I can purchase it"
 From the user story above, thinking in an object-oriented design, you can easily deduce that the object is an online shopper, item and cart. And the actions or methods are adding item and purchasing it.
 
+## Four Design Principples of Object Oriented Design
+- Abstraction
+- Encapsulation
+- Decomposition
+- Generalization
+
+## Abstraction
+Abstraction is the idea of simplifying a concept in the problem domain to its essentials within some context. Abstraction allows you to better understand a concept by breaking it down into description that ignores unimportant details. 
+
+> To me, abstraction is simply exposing only the essentials of a concept and ignoring unimportant details. And the essentials of a concept are based in the context of the concept. For instance, the abstraction of a Person concept would expose details like driving, driver's licence, while that of a buyer would have different essentials.
+
