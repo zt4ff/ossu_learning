@@ -31,8 +31,13 @@ From the user story above, thinking in an object-oriented design, you can easily
 - Decomposition
 - Generalization
 
-## Abstraction
+### Abstraction
 Abstraction is the idea of simplifying a concept in the problem domain to its essentials within some context. Abstraction allows you to better understand a concept by breaking it down into description that ignores unimportant details. 
 
 > To me, abstraction is simply exposing only the essentials of a concept and ignoring unimportant details. And the essentials of a concept are based in the context of the concept. For instance, the abstraction of a Person concept would expose details like driving, driver's licence, while that of a buyer would have different essentials.
 
+
+### Encapsulation
+Encapsulation forms a self-contained object by bundling the data and functions it requires to work, exposes an interface whereby other objects can access and use it, and restricts access to cerntain inside details. 
+
+> Thinking of a class as a Black Box, in a way where the internal working of the class is not needed by external users of the class. It promotes reusuability and modularity.
