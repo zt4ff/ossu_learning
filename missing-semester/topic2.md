@@ -49,15 +49,37 @@ true || echo "This won't be printed"
 ```
 
 ---
+
 Let's say you want out pass the output of a command to a variable of a statement, you can do that using `$(CMD)`
+
 ---
 
-### Wildcard matching 
-In bash you can use `?` to match one and `*` to match any about. 
-For instance, let's say you have these sets of file. 
+### Wildcard matching
+
+In bash you can use `?` to match one and `*` to match any about.
+For instance, let's say you have these sets of file.
+
 ```md
 |- foo
 |- foo1
 |- foo2
-|- foobarx
+|- foobar
+|- bar
+```
+
+`rm foo?` will remove foo1 foo2, while
+`rm foo*` will remove foo, foo1, foo2, foobar, basically all but bar.
+
+You can also use curly braces when you have a common substring in a series of commands, you can use curly braces for bash to expand this automatically.
+
+For example,
+```bash
+convert image.{png, jpg}
+# will expand to 
+convert image.png image.jpg
+
+# globbing technique can also be combined eg
+
+rm *{.py,.js}
+whuch with remove all *.py and *.js files
 ```
