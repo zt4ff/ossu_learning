@@ -1,4 +1,4 @@
-class ExampleSingleton {
+export class ExampleSingleton {
   // create only one unique instance of the class
   private static uniqueInstance: ExampleSingleton;
   private foo: string;
@@ -8,7 +8,7 @@ class ExampleSingleton {
   }
 
   public static getInstance() {
-    if (this.uniqueInstance === null) {
+    if (!this.uniqueInstance) {
       this.uniqueInstance = new ExampleSingleton("kayode");
       console.log("creating an instance")
     }
@@ -16,10 +16,18 @@ class ExampleSingleton {
     return this.getInstance;
   }
 
+  public static getName() {
+    return this.uniqueInstance.foo
+  }
+
   public static changeName(foo: string) {
     this.uniqueInstance.foo = foo;
   }
 }
 
+// lazy initialize the instance
+ExampleSingleton.getInstance()
 
-const i1 = ExampleSingleton.getInstance()
+
+console.log(ExampleSingleton.getName())
+
