@@ -61,3 +61,6 @@ This patterns define how objects works or interacts.
 
 ### Template Patterns
 The breaks the algorithm into steps, allowing subclasses to override these steps but not the actual method
+
+### Chain of Responsibility
+This is a pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
