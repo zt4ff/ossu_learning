@@ -44,4 +44,4 @@ Client -> Adapter -> Adaptee
 ### Composite Pattern
 Achieves two goals:
 - To compose nested structures of objects
-- To deal with the classes for these objects uniformly
+- To deal with the classes for these objects uniformly 
