@@ -45,3 +45,19 @@ Client -> Adapter -> Adaptee
 Achieves two goals:
 - To compose nested structures of objects
 - To deal with the classes for these objects uniformly 
+
+### Proxy Pattern
+It makes sense to represent stuffs with placeholders in many cases. For instance, a dummy is the placeholder in a human-car crash test, a representative of a company is a placeholder of that company. 
+So in this cases, a Proxy object is like a placeholder of an actual object. It represents an actual object. Why would we ever need this?
+- To act as a virtual proxy where the real class can be resource intensive to instanciate.
+- To act as a protection proxy
+- To act as a remote proxy 
+
+### Decorator Pattern
+The way we consume coffee can differ, some will had creamer, some sugar, some ice... But the core of the coffee (as a stimulant) stays constant, but this difference also provides unique different ways to enjoy a coffee. In software, it's nice to have flexible interactions before class.
+
+## Behavioral Patterns
+This patterns define how objects works or interacts. 
+
+### Template Patterns
+The breaks the algorithm into steps, allowing subclasses to override these steps but not the actual method
