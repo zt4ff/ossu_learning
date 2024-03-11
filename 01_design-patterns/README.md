@@ -67,3 +67,6 @@ This is a pattern that lets you pass requests along a chain of handlers. Upon re
 
 ### State of Responsibility
 The main idea is that, at any given moment, there's a finite number of states which a program can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously.
+
+### Command Pattern
+The command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request's execution, and support undoable operations.

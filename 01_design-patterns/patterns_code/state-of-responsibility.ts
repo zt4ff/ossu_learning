@@ -1,13 +1,13 @@
 /**
  * The Context defines the interface of interest to client. Is also
- * maintains a reference to an instance of a State subclass, whuch
+ * maintains a reference to an instance of a State subclass, which
  * represents the current state of the Context.
  */
 class Context {
   /**
    * A reference to the current state of the Context.
    */
-  private state: State;
+  private state: State | null = null;
 
   constructor(state: State) {
     this.transitionTo(state);
@@ -26,11 +26,11 @@ class Context {
    * The Context delegstes part of its behavior to the current State object
    */
   public request1(): void {
-    this.state.handle1();
+    (<State>this.state).handle1();
   }
 
   public request2(): void {
-    this.state.handle2();
+    (<State>this.state).handle2();
   }
 }
 
@@ -41,7 +41,7 @@ class Context {
  * context to another state
  */
 abstract class State {
-  protected context: Context;
+  protected context: Context | null = null;
 
   public setContext(context: Context) {
     this.context = context;
@@ -60,7 +60,7 @@ class ConcreteStateA extends State {
   public handle1(): void {
     console.log("ConcreateStateA handles request1.");
     console.log("ConcreateStateA wants to change the state of the context");
-    this.context.transitionTo(new ConcreteStateB());
+    if (this.context) this.context.transitionTo(new ConcreteStateB());
   }
 
   public handle2(): void {
@@ -79,7 +79,7 @@ class ConcreteStateB extends State {
   public handle2(): void {
     console.log("ConcreateStateB handles request1.");
     console.log("ConcreateStateB wants to change the state of the context");
-    this.context.transitionTo(new ConcreteStateA());
+    if (this.context) this.context.transitionTo(new ConcreteStateA());
   }
 }
 

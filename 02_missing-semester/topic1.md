@@ -1,5 +1,7 @@
 # Topic 1: The Shell
 
+Link: https://missing.csail.mit.edu/2020/course-shell/
+
 ## What is the shell?
 
 They are many interface you interate with, there's GUI, AR/VR, etc. For the most part, these intefaces are usually useful but somethings, the button you need might not be available of the interface or programmed there. So you have to go the old-fashioned way with shell.
@@ -25,7 +27,7 @@ The simplest form of redirection is `< file` and `> file`.
 You can also use >> to append to a file. Where this kind of input/output redirection really shines is the use of pipes. The `|` operator lets you "chain" programs such that the output of one of the input is the input of another:
 
 ```bash
-# ls outputs all the files and directory in the "/" directory and then pipes (|) the output to tail -n1 which prints 
+# ls outputs all the files and directory in the "/" directory and then pipes (|) the output to tail -n1 which prints
 ls -l / | tail -nl
 
 curl --head --silent google.com | grep --ignore-case

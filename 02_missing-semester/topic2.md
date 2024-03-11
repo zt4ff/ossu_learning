@@ -1,5 +1,7 @@
 # Topic 2: Shell Tools and Scripting
 
+Link: https://missing.csail.mit.edu/2020/shell-tools/
+
 Assigning variables in Shell can be done via
 
 ```bash
