@@ -68,12 +68,14 @@ then we can continue the paused job in the foreground or background using `fg` a
 
 > Note that a background process is still a child process of the terminal so closing the terminal (which is sending another signal, SIGHUP). You can use `nohup` to ignore `SIGHUP`, or use `disown` is the process is already running.
 
-
 ### Terminal Multiplexers
+
 You may want to use your terminal more productively with stuff like side panes, etc. tmux is a terminal multiplexers that makes it easy to do stuffs like this. And tmux allows you to be able to attach and detach your terminal session. This can help your workflow to be better when you are working with remote machines since it avoids the need to use nohup and similar tricks.
 
 Some popular tmux key binds
+
 #### Sessions
+
 `tmux` starts a new session
 `tmux new -s NAME` starts a new session with that name
 `tmux ls` list all currency sessions
@@ -81,9 +83,19 @@ Some popular tmux key binds
 `tmux a` attaches the last session. use the `-t` to specific which
 
 #### Windows
+
 `<C-b> c` creates a new window
 `<C-d>` teminates a window
 `<C-b> N` goes to the nth window - N is a number
 `<C-b> ,` rename the current window
 `<C-b> w` list current windows
+
+### Questions and Solutions
+
+1. From what we have seen, we can use some ps aux | grep commands to get our jobs’ pids and then kill them, but there are better ways to do it. Start a sleep 10000 job in a terminal, background it with Ctrl-Z and continue its execution with bg. Now use pgrep to find its pid and pkill to kill it without ever typing the pid itself. (Hint: use the -af flags).
+
+`Solution`:
+```bash
+pgrep sleep | awk '{print $1}' | xargs kill
+```
 
